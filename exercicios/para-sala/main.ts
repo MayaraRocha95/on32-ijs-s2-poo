@@ -13,8 +13,8 @@ console.log("rodando")
 // descricao: "",
 // tipo: ProdutoTipoEnum.DIGITAL
 // }
-const produtoDigital = new ProdutoDigital("Codigo Limpo" , 98.88, "Abordando as complexidades de um software")
-const produto = new Produto("Regata", 100, "teste")
+const produtoDigital = new ProdutoDigital("Codigo Limpo" , 98.88, "Abordando as complexidades de um software", 'amarelo')
+const produto = new Produto("Regata", 100, "teste", 'roxo')
 
 const ReagataRosa = new ProdutoVariante("Regata", 25, "Modelo verão", "Rosa")
 
@@ -24,11 +24,14 @@ const display = (...produtos: ProdutoInterface[]): void => {
       return {
         nome: produto.nome,
         preco: produto.preco,
+        cor: produto.cor,
         descricao: produto.descricao,
-        estaDisponivel: produto.estaDisponivel()
+        estaDisponivel: produto.estaDisponivel() ? 'Disponivel' : 'Não Disponivel',
+
       }
     })
     console.table(carrinhoProdutos)
+    
   }
 
 display(produto,produtoDigital,ReagataRosa)

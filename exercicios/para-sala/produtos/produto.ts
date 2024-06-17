@@ -31,9 +31,16 @@ export class Produto implements ProdutoInterface{
     get descricao():string {
         return 'verde ' + this._descricao;
     }
+    // alterar preco
 
+    get preco(): number {
+        return 28;
+    }
+   
+    
 
-constructor(public nome:string, public preco: number, protected _descricao: string){}
+constructor(public nome:string, public _preco: number, protected _descricao: string, public  cor: string){}
+   
 }
 
 

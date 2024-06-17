@@ -7,12 +7,12 @@ export class ProdutoVariante extends Produto {
   
   constructor(
     public nome: string,
-    public preco: number,
+    public _preco: number,
     protected _descricao: string,
     public cor: string) 
     {
 
-    super(nome, preco, _descricao)
+    super(nome, _preco, _descricao, cor)
   }
   get descricao(): string {
     return `O produto: ${this.nome} e tem a cor ${this.cor} com as categorias ${this.categorias.join(', ')} e ${this._descricao}`
