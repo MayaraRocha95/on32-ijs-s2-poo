@@ -1,3 +1,4 @@
+import { Carrinho } from "./carrinho/carrinho"
 import { ProdutoTipoEnum } from "./produtos/enums/produto-tipo.enum"
 import { ProdutoInterface } from "./produtos/interfaces/produtos.interface"
 import { Produto } from "./produtos/produto"
@@ -19,19 +20,12 @@ const produto = new Produto("Regata", 100, "teste", 'roxo')
 const ReagataRosa = new ProdutoVariante("Regata", 25, "Modelo verão", "Rosa")
 
 
-const display = (...produtos: ProdutoInterface[]): void => {
-    const carrinhoProdutos = produtos.map((produto) => {
-      return {
-        nome: produto.nome,
-        preco: produto.preco,
-        cor: produto.cor,
-        descricao: produto.descricao,
-        estaDisponivel: produto.estaDisponivel() ? 'Disponivel' : 'Não Disponivel',
+const carrinho = new Carrinho()
 
-      }
-    })
-    console.table(carrinhoProdutos)
-    
-  }
+carrinho.adicionarItem(produto, 1)
+carrinho.adicionarItem(ReagataRosa, 2)
+carrinho.adicionarItem(produtoDigital, 1)
 
-display(produto,produtoDigital,ReagataRosa)
+
+//simula carrinho
+carrinho.display()

@@ -6,6 +6,7 @@ export interface ProdutoInterface{
     nome: string;
     cor: string;
     tipo: ProdutoTipoEnum;
+    estoque: number;
     estaDisponivel: () => boolean; //ter estoque, status: publicado, draft, deletado
 
 }

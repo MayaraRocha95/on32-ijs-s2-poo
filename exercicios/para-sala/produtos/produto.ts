@@ -22,7 +22,7 @@ import { ProdutoInterface } from "./interfaces/produtos.interface";
 
 //Abreviada
 export class Produto implements ProdutoInterface{
-    protected estoque: number = 0;
+    estoque: number = 10;
     public estaDisponivel(): boolean {
         return this.estoque > 0;
     

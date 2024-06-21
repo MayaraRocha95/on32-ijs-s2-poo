@@ -2,6 +2,7 @@ import { ProdutoTipoEnum } from "./enums/produto-tipo.enum";
 import { ProdutoInterface } from "./interfaces/produtos.interface";
 
 export class ProdutoDigital implements ProdutoInterface{
+    estoque: number = -1;
     public estaDisponivel(): boolean {
         return true;
     
